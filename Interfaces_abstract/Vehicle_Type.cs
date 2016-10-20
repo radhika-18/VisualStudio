@@ -75,7 +75,7 @@ namespace Interfaces_abstract
         public bool airBrakes()
         {
             Console.WriteLine("Air Brakes Available: YES/NO");
-            bool returnResult = false;
+            bool returnResult = true;
             String airBrakeAvailable = Console.ReadLine();
             airBrakeAvailable = airBrakeAvailable.ToUpper();
             while (airBrakeAvailable != "YES" || airBrakeAvailable != "NO")
