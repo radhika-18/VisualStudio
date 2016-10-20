@@ -60,13 +60,34 @@ namespace Interfaces_abstract
         {
             throw new NotImplementedException();
         }
+        public void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}", this.Color, this.Capacity);
+        }
     }
 
     class SportsBike : TwoWheeler, ISafety
     {
         public bool airBrakes()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Air Brakes Available in Bike: YES/NO");
+            bool returnResult = true;
+            String airBrakeAvailable = Console.ReadLine();
+            airBrakeAvailable = airBrakeAvailable.ToUpper();
+            while (airBrakeAvailable != "YES" || airBrakeAvailable != "NO")
+            {
+                Console.WriteLine("Please enter the correct Value");
+                airBrakes();
+            }
+            if (airBrakeAvailable == "YES")
+            {
+                returnResult = true;
+            }
+            else if (airBrakeAvailable == "NO")
+            {
+                returnResult = false;
+            }
+            return returnResult;
         }
     }
 
@@ -74,7 +95,7 @@ namespace Interfaces_abstract
     {
         public bool airBrakes()
         {
-            Console.WriteLine("Air Brakes Available: YES/NO");
+            Console.WriteLine("Air Brakes Available in Car: YES/NO");
             bool returnResult = true;
             String airBrakeAvailable = Console.ReadLine();
             airBrakeAvailable = airBrakeAvailable.ToUpper();
