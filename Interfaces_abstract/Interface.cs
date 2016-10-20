@@ -15,7 +15,7 @@ namespace Interface
 
         int Capacity { get; set; }
 
-        void Accelerate(); //not decided the return type
+        void Average(); //not decided the return type
 
         void Brake(); //return type
     }
@@ -25,6 +25,6 @@ namespace Interface
     /// </summary>
     interface ISafety
     {
-        bool operateABS();
+        bool airBrakes();
     }
 }

@@ -8,7 +8,7 @@ namespace Interfaces_abstract
 {
     class MainProgram
     {
-        public void getCarType()
+        public void getVehicalType()
         {
             int choice;
             Console.WriteLine("Enter the type of vehicle to be created.\n1.Two Wheeler");
@@ -46,7 +46,7 @@ namespace Interfaces_abstract
 
         static void Main(string[] args)
         {
-            MainProgram obj = new MainProgram();
+            MainProgram objMainProgram = new MainProgram();
             int choice;
             while (true)
             {
@@ -56,7 +56,7 @@ namespace Interfaces_abstract
                 choice = Convert.ToInt32(Console.ReadLine());
                 if (choice != 1)
                     break;
-                obj.getCarType();
+                objMainProgram.getVehicalType();
             }
         }
     }

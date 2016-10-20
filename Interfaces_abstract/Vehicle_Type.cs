@@ -21,7 +21,7 @@ namespace Interfaces_abstract
             set;
         }
 
-        public void Accelerate()
+        public void Average()
         {
             throw new NotImplementedException();
         }
@@ -30,6 +30,7 @@ namespace Interfaces_abstract
         {
             throw new NotImplementedException();
         }
+    
         public void PrintDetails()
         {
             Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}",this.Color,this.Capacity);
@@ -50,7 +51,7 @@ namespace Interfaces_abstract
             set;
         }
 
-        public void Accelerate()
+        public void Average()
         {
             throw new NotImplementedException();
         }
@@ -63,7 +64,7 @@ namespace Interfaces_abstract
 
     class SportsBike : TwoWheeler, ISafety
     {
-        public bool operateABS()
+        public bool airBrakes()
         {
             throw new NotImplementedException();
         }
@@ -71,9 +72,28 @@ namespace Interfaces_abstract
 
     class RacingCar : FourWheeler, ISafety
     {
-        public bool operateABS()
+        public bool airBrakes()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Air Brakes Available: YES/NO");
+            bool returnResult = false;
+            String airBrakeAvailable = Console.ReadLine();
+            airBrakeAvailable = airBrakeAvailable.ToUpper();
+            while (airBrakeAvailable != "YES" || airBrakeAvailable != "NO")
+            {
+                Console.WriteLine("Please enter the correct Value");
+                airBrakes();
+            }
+            if (airBrakeAvailable == "YES")
+            {
+                returnResult = true;
+            }
+            else if (airBrakeAvailable == "NO")
+            {
+                returnResult = false;
+            }
+            return returnResult;
+
+
         }
     }
 
