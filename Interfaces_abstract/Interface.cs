@@ -15,7 +15,7 @@ namespace Interface
 
         int Capacity { get; set; }
 
-        void Average(); //not decided the return type
+        void Accelerate(); //not decided the return type
 
         void Brake(); //return type
     }
