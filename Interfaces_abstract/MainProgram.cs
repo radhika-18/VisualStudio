@@ -24,6 +24,7 @@ namespace Interfaces_abstract
                     break;
                 case 2:
                     FourWheeler fourwheeler = new FourWheeler();
+                    getFourWheelerDetails(fourwheeler);
                     break;
                 default:
                     Console.WriteLine("Enter proper choice");
@@ -41,7 +42,14 @@ namespace Interfaces_abstract
             twowheeler.PrintDetails();
         }
 
-       
+        private void getFourWheelerDetails(FourWheeler fourwheeler)
+        {
+            Console.WriteLine("Enter the color of the fourwheeler");
+            fourwheeler.Color = Console.ReadLine();
+            Console.WriteLine("Enter the capacity of the fourwheeler");
+            fourwheeler.Capacity = Convert.ToInt32(Console.ReadLine());
+            fourwheeler.PrintDetails();
+        }
 
 
         static void Main(string[] args)
