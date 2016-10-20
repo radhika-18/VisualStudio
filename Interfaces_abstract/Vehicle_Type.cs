@@ -124,8 +124,6 @@ namespace Interfaces_abstract
                 returnResult = false;
             }
             return returnResult;
-
-
         }
         public  override void PrintDetails()
         {
@@ -140,6 +138,13 @@ namespace Interfaces_abstract
             Console.WriteLine("Enter the details for racing car");
             base.getVehicleDetails();
         }
+        public new void Brake()
+        {
+            if (airBrakes())
+                Console.WriteLine("Air brakes activated");
+            else
+                Console.WriteLine("Air brakes not activated");
+        } 
     }
 
 }

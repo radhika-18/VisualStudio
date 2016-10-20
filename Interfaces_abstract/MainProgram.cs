@@ -22,21 +22,26 @@ namespace Interfaces_abstract
                     TwoWheeler twowheeler = new TwoWheeler();
                     twowheeler.getVehicleDetails();
                     twowheeler.PrintDetails();
+                    twowheeler.Accelerate();
+
                     break;
                 case 2:
                     FourWheeler fourwheeler = new FourWheeler();
                     fourwheeler.getVehicleDetails();
                     fourwheeler.PrintDetails();
+                    fourwheeler.Accelerate();
                     break;
                 case 3:
                     SportsBike sportsbike = new SportsBike();
                     sportsbike.getVehicleDetails();
                     sportsbike.PrintDetails();
+                    sportsbike.Accelerate();
                     break;
                 case 4:
                     RacingCar racingcar = new RacingCar();
                     racingcar.getVehicleDetails();
                     racingcar.PrintDetails();
+                    racingcar.Accelerate();
                     break;
                 default:
                     Console.WriteLine("Enter proper choice");
