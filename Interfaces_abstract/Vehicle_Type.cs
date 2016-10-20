@@ -31,7 +31,7 @@ namespace Interfaces_abstract
             throw new NotImplementedException();
         }
     
-        public void PrintDetails()
+        public virtual void PrintDetails()
         {
             Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}",this.Color,this.Capacity);
         }
@@ -60,6 +60,10 @@ namespace Interfaces_abstract
         {
             throw new NotImplementedException();
         }
+        public virtual void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the four wheeler:{0}\nCapacity of the four wheeler:{1}", this.Color, this.Capacity);
+        }
     }
 
     class SportsBike : TwoWheeler, ISafety
@@ -67,6 +71,10 @@ namespace Interfaces_abstract
         public bool airBrakes()
         {
             throw new NotImplementedException();
+        }
+        public override void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the sports bike:{0}\nCapacity of the sports bike:{1}", this.Color, this.Capacity);
         }
     }
 
@@ -94,6 +102,10 @@ namespace Interfaces_abstract
             return returnResult;
 
 
+        }
+        public  override void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the racing car:{0}\nCapacity of the racing car:{1}", this.Color, this.Capacity);
         }
     }
 
