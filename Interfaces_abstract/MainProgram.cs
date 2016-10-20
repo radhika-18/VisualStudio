@@ -20,11 +20,23 @@ namespace Interfaces_abstract
             {
                 case 1:
                     TwoWheeler twowheeler = new TwoWheeler();
-                    getTwoWheelerDetails(twowheeler);
+                    twowheeler.getVehicleDetails();
+                    twowheeler.PrintDetails();
                     break;
                 case 2:
                     FourWheeler fourwheeler = new FourWheeler();
-                    getFourWheelerDetails(fourwheeler);
+                    fourwheeler.getVehicleDetails();
+                    fourwheeler.PrintDetails();
+                    break;
+                case 3:
+                    SportsBike sportsbike = new SportsBike();
+                    sportsbike.getVehicleDetails();
+                    sportsbike.PrintDetails();
+                    break;
+                case 4:
+                    RacingCar racingcar = new RacingCar();
+                    racingcar.getVehicleDetails();
+                    racingcar.PrintDetails();
                     break;
                 default:
                     Console.WriteLine("Enter proper choice");
@@ -33,25 +45,7 @@ namespace Interfaces_abstract
 
         }
 
-        private void getTwoWheelerDetails(TwoWheeler twowheeler)
-        {
-            Console.WriteLine("Enter the color of the twowheeler");
-            twowheeler.Color = Console.ReadLine();
-            Console.WriteLine("Enter the capacity of the twowheeler");
-            twowheeler.Capacity = Convert.ToInt32(Console.ReadLine());
-            twowheeler.PrintDetails();
-        }
-
-        private void getFourWheelerDetails(FourWheeler fourwheeler)
-        {
-            Console.WriteLine("Enter the color of the fourwheeler");
-            fourwheeler.Color = Console.ReadLine();
-            Console.WriteLine("Enter the capacity of the fourwheeler");
-            fourwheeler.Capacity = Convert.ToInt32(Console.ReadLine());
-            fourwheeler.PrintDetails();
-        }
-
-
+        
         static void Main(string[] args)
         {
             MainProgram obj = new MainProgram();

@@ -20,7 +20,13 @@ namespace Interfaces_abstract
             get;
             set;
         }
-
+        public void getVehicleDetails()
+        {
+            Console.WriteLine("Enter the color of the twowheeler");
+            this.Color = Console.ReadLine();
+            Console.WriteLine("Enter the capacity of the twowheeler");
+            this.Capacity = Convert.ToInt32(Console.ReadLine());
+        }
         public void Accelerate()
         {
             throw new NotImplementedException();
@@ -30,7 +36,7 @@ namespace Interfaces_abstract
         {
             throw new NotImplementedException();
         }
-        public void PrintDetails()
+        public virtual void PrintDetails()
         {
             Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}",this.Color,this.Capacity);
         }
@@ -49,7 +55,13 @@ namespace Interfaces_abstract
             get;
             set;
         }
-
+        public void getVehicleDetails()
+        {
+            Console.WriteLine("Enter the color of the fourwheeler");
+            this.Color = Console.ReadLine();
+            Console.WriteLine("Enter the capacity of the fourwheeler");
+            this.Capacity = Convert.ToInt32(Console.ReadLine());
+        }
         public void Accelerate()
         {
             throw new NotImplementedException();
@@ -59,9 +71,9 @@ namespace Interfaces_abstract
         {
             throw new NotImplementedException();
         }
-        public void PrintDetails()
+        public virtual void PrintDetails()
         {
-            Console.WriteLine("\nThe details entered are as follows:\nColor of the four wheeler:{0}\nCapacity of the for wheeler:{1}", this.Color, this.Capacity);
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the four wheeler:{0}\nCapacity of the four wheeler:{1}", this.Color, this.Capacity);
         }
     }
 
@@ -71,6 +83,10 @@ namespace Interfaces_abstract
         {
             throw new NotImplementedException();
         }
+        public override void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the sportsbike:{0}\nCapacity of the sportsbike:{1}", this.Color, this.Capacity);
+        }
     }
 
     class RacingCar : FourWheeler, ISafety
@@ -78,6 +94,10 @@ namespace Interfaces_abstract
         public bool operateABS()
         {
             throw new NotImplementedException();
+        }
+        public override void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the racingcar:{0}\nCapacity of the racing:{1}", this.Color, this.Capacity);
         }
     }
 
