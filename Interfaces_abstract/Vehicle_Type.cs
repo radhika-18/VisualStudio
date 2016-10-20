@@ -30,6 +30,10 @@ namespace Interfaces_abstract
         {
             throw new NotImplementedException();
         }
+        public void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}",this.Color,this.Capacity);
+        }
     }
 
     class FourWheeler : IVehicle

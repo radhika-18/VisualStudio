@@ -3,3 +3,4 @@ c:\users\nair_r\documents\visual studio 2015\Projects\Interfaces_abstract\Interf
 c:\users\nair_r\documents\visual studio 2015\Projects\Interfaces_abstract\Interfaces_abstract\bin\Debug\Interfaces_abstract.pdb
 c:\users\nair_r\documents\visual studio 2015\Projects\Interfaces_abstract\Interfaces_abstract\obj\Debug\Interfaces_abstract.exe
 c:\users\nair_r\documents\visual studio 2015\Projects\Interfaces_abstract\Interfaces_abstract\obj\Debug\Interfaces_abstract.pdb
+C:\Users\nair_r\Documents\Visual Studio 2015\Projects\Interfaces_Abstract\Interfaces_abstract\obj\Debug\Interfaces_abstract.csprojResolveAssemblyReference.cache
