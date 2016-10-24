@@ -55,7 +55,10 @@ namespace Interfaces_abstract
 
         }
 
+            
     }
+       
+
 
     class SportsBike : TwoWheeler, ISafety
     {

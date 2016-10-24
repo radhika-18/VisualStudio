@@ -21,25 +21,23 @@ namespace Interfaces_abstract
             {
                 case 1:
                     TwoWheeler twowheelerObj = new TwoWheeler();
-                    object detailsSportsBike=twowheelerObj.getVehicleDetails();
-                    //PrintDetails();
+                    object detailTwoWheeler = twowheelerObj.getVehicleDetails();
+                    PrintDetails(detailTwoWheeler);
                     break;
                 case 2:
                     FourWheeler fourwheelerObj = new FourWheeler();
-                    fourwheelerObj.getVehicleDetails();
-                    
+                    Object detailFourWheeler = fourwheelerObj.getVehicleDetails();
+                    PrintDetails(detailFourWheeler);
                     break;
                 case 3:
                     SportsBike sportsbikeObj = new SportsBike();
-                    object detailsSportsBike = sportsbikeObj.getVehicleDetails();
-                    sportsbikeObj.Brake();
+                    Object detailsSportsBike = sportsbikeObj.getVehicleDetails();
                     PrintDetails(detailsSportsBike);
-                    //PrintDetails();
+                    sportsbikeObj.Brake();
                     break;
                 case 4:
                     RacingCar racingcar = new RacingCar();
-                    object detailSportCar = racingcar.getVehicleDetails();
-                    racingcar.Brake();
+                    Object detailSportCar = racingcar.getVehicleDetails();
                     PrintDetails(detailSportCar);
                     break;
                 default:
