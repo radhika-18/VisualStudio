@@ -58,10 +58,7 @@ namespace Interfaces_abstract
             return this;
             
         }
-        public virtual void PrintDetails()
-        {
-            Console.WriteLine("\nThe details entered are as follows:\nColor of the four wheeler:{0}\nCapacity of the four wheeler:{1}", this.Color, this.Capacity);
-        }
+       
     }
 
     class SportsBike : TwoWheeler, ISafety
