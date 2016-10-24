@@ -8,6 +8,7 @@ namespace Interfaces_abstract
 {
     class MainProgram
     {
+
         public void getVehicalType()
         {
             int choice;
@@ -35,8 +36,9 @@ namespace Interfaces_abstract
                     break;
                 case 4:
                     RacingCar racingcar = new RacingCar();
-                    racingcar.getVehicleDetails();
-                    racingcar.PrintDetails();
+                    object details = racingcar.getVehicleDetails();
+                    racingcar.Brake();
+                    PrintDetails(details);
                     break;
                 default:
                     Console.WriteLine("Enter proper choice");
@@ -45,7 +47,17 @@ namespace Interfaces_abstract
 
         }
 
-        
+        public void PrintDetails(object details)
+        {
+            var properties = details.GetType().GetProperties();
+            foreach (var p in properties)
+            {
+                Console.WriteLine(p.Name + " of the vehicle is : " + p.GetValue(details));
+            }
+        }
+
+       
+
         static void Main(string[] args)
         {
             MainProgram objMainProgram = new MainProgram();
@@ -62,9 +74,6 @@ namespace Interfaces_abstract
             }
         }
 
-        public object PrintDetails()
-        {
-            Console.WriteLine("\nThe details entered are as follows:\nColor of the racing car:{0}\nCapacity of the racing car:{1}", this.Color, this.Capacity);
-        }
+        
     }
 }
