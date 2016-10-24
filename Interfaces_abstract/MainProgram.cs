@@ -19,29 +19,24 @@ namespace Interfaces_abstract
             switch (choice)
             {
                 case 1:
-                    TwoWheeler twowheeler = new TwoWheeler();
-                    twowheeler.getVehicleDetails();
-                    twowheeler.PrintDetails();
-                    twowheeler.Accelerate();
-
+                    TwoWheeler twowheelerObj = new TwoWheeler();
+                    twowheelerObj.getVehicleDetails();
+                    twowheelerObj.PrintDetails();
                     break;
                 case 2:
-                    FourWheeler fourwheeler = new FourWheeler();
-                    fourwheeler.getVehicleDetails();
-                    fourwheeler.PrintDetails();
-                    fourwheeler.Accelerate();
+                    FourWheeler fourwheelerObj = new FourWheeler();
+                    fourwheelerObj.getVehicleDetails();
+                    fourwheelerObj.PrintDetails();
                     break;
                 case 3:
-                    SportsBike sportsbike = new SportsBike();
-                    sportsbike.getVehicleDetails();
-                    sportsbike.PrintDetails();
-                    sportsbike.Accelerate();
+                    SportsBike sportsbikeObj = new SportsBike();
+                    sportsbikeObj.getVehicleDetails();
+                    sportsbikeObj.PrintDetails();
                     break;
                 case 4:
                     RacingCar racingcar = new RacingCar();
                     racingcar.getVehicleDetails();
                     racingcar.PrintDetails();
-                    racingcar.Accelerate();
                     break;
                 default:
                     Console.WriteLine("Enter proper choice");
@@ -65,6 +60,11 @@ namespace Interfaces_abstract
                     break;
                 objMainProgram.getVehicalType();
             }
+        }
+
+        public object PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the racing car:{0}\nCapacity of the racing car:{1}", this.Color, this.Capacity);
         }
     }
 }
