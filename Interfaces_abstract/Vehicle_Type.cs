@@ -21,17 +21,17 @@ namespace Interfaces_abstract
             set;
         }
 
-        public void Average()
+   
+        public virtual void getVehicleDetails()
         {
-            throw new NotImplementedException();
-        }
+            Console.WriteLine("\nEnter the color of the vehicle");
+            this.Color = Console.ReadLine();
+            Console.WriteLine("\nEnter the capacity of the vehicle");
+            this.Capacity = Convert.ToInt32(Console.ReadLine());
+            PrintDetails();
 
-        public void Brake()
-        {
-            throw new NotImplementedException();
         }
-    
-        public void PrintDetails()
+        public virtual void PrintDetails()
         {
             Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}",this.Color,this.Capacity);
         }
@@ -51,18 +51,19 @@ namespace Interfaces_abstract
             set;
         }
 
-        public void Average()
+   
+        public virtual object getVehicleDetails()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("\nEnter the color of the vehicle");
+            this.Color = Console.ReadLine();
+            Console.WriteLine("\nEnter the capacity of the vehicle");
+            this.Capacity = Convert.ToInt32(Console.ReadLine());
+            return this;
+            
         }
-
-        public void Brake()
+        public virtual void PrintDetails()
         {
-            throw new NotImplementedException();
-        }
-        public void PrintDetails()
-        {
-            Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}", this.Color, this.Capacity);
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the four wheeler:{0}\nCapacity of the four wheeler:{1}", this.Color, this.Capacity);
         }
     }
 
@@ -89,6 +90,20 @@ namespace Interfaces_abstract
             }
             return returnResult;
         }
+        public override void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the sports bike:{0}\nCapacity of the sports bike:{1}\nAir brakes available:{2}", this.Color, this.Capacity);
+        }
+        public override void getVehicleDetails()
+        {
+            Console.WriteLine("******************Enter the details for sports bike**************");
+            base.getVehicleDetails();
+        }
+
+        public void Brake()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class RacingCar : FourWheeler, ISafety
@@ -99,7 +114,8 @@ namespace Interfaces_abstract
             bool returnResult = true;
             String airBrakeAvailable = Console.ReadLine();
             airBrakeAvailable = airBrakeAvailable.ToUpper();
-            while (airBrakeAvailable != "YES" || airBrakeAvailable != "NO")
+            Console.WriteLine(airBrakeAvailable);
+            while (airBrakeAvailable != "YES" && airBrakeAvailable != "NO")
             {
                 Console.WriteLine("Please enter the correct Value");
                 airBrakes();
@@ -112,10 +128,38 @@ namespace Interfaces_abstract
             {
                 returnResult = false;
             }
-            return returnResult;
 
+            return returnResult;
+        }
+
+        public  override void PrintDetails()
+        {
+            Console.WriteLine("\nThe details entered are as follows:\nColor of the racing car:{0}\nCapacity of the racing car:{1}", this.Color, this.Capacity);
+        }
+
+       
+
+        public new void getVehicleDetails()
+        {
+            Console.WriteLine("******************Enter the details for racing car***************");
+            object details = base.getVehicleDetails();
+            //var properties=details.GetType().GetProperties();
+            //foreach (var p in properties)
+            //{
+            //    (p.GetValue(details,null));
+            //}
+
+            Brake();
 
         }
+
+        public void Brake()
+        {
+            if (airBrakes())
+                Console.WriteLine("Air brakes activated");
+            else
+                Console.WriteLine("Air brakes not activated");
+        } 
     }
 
 }
