@@ -96,7 +96,7 @@ namespace Interfaces_abstract
 
         public new object getVehicleDetails()
         {
-            Console.WriteLine("******************Enter the details for racing car***************");
+            Console.WriteLine("******************Enter the details for sports Bike***************");
             object details = base.getVehicleDetails();
             return details;
         }

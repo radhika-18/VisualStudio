@@ -21,8 +21,9 @@ namespace Interfaces_abstract
             {
                 case 1:
                     TwoWheeler twowheelerObj = new TwoWheeler();
-                    object detailTwoWheeler = twowheelerObj.getVehicleDetails();
-                    PrintDetails(detailTwoWheeler);
+                    //object detailTwoWheeler = twowheelerObj.getVehicleDetails();
+                    //PrintDetails(detailTwoWheeler);
+                    startApplication(twowheelerObj);
                     break;
                 case 2:
                     FourWheeler fourwheelerObj = new FourWheeler();
@@ -32,12 +33,14 @@ namespace Interfaces_abstract
                 case 3:
                     SportsBike sportsbikeObj = new SportsBike();
                     Object detailsSportsBike = sportsbikeObj.getVehicleDetails();
-                    PrintDetails(detailsSportsBike);
                     sportsbikeObj.Brake();
+                    PrintDetails(detailsSportsBike);
+                    
                     break;
                 case 4:
                     RacingCar racingcar = new RacingCar();
                     Object detailSportCar = racingcar.getVehicleDetails();
+                    racingcar.Brake();
                     PrintDetails(detailSportCar);
                     break;
                 default:
@@ -47,16 +50,6 @@ namespace Interfaces_abstract
 
         }
 
-        public void PrintDetails(object details)
-        {
-            var properties = details.GetType().GetProperties();
-            foreach (var p in properties)
-            {
-                Console.WriteLine(p.Name + " of the vehicle is : " + p.GetValue(details));
-            }
-        }
-
-       
 
         static void Main(string[] args)
         {
@@ -74,6 +67,21 @@ namespace Interfaces_abstract
             }
         }
 
-        
+
+        public void PrintDetails(Object details)
+        {
+            var properties = details.GetType().GetProperties();
+            foreach (var p in properties)
+            {
+                Console.WriteLine(p.Name + " of the vehicle is : " + p.GetValue(details));
+            }
+        }
+
+        public void startApplication(object instanceobj)
+        {
+            var val = instanceobj.GetType();
+            Console.Write(instanceobj);
+        }
+             
     }
 }
