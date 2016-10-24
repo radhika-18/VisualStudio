@@ -21,7 +21,7 @@ namespace Interfaces_abstract
                 case 1:
                     TwoWheeler twowheelerObj = new TwoWheeler();
                     twowheelerObj.getVehicleDetails();
-                    twowheelerObj.PrintDetails();
+                    //PrintDetails();
                     break;
                 case 2:
                     FourWheeler fourwheelerObj = new FourWheeler();
@@ -30,14 +30,16 @@ namespace Interfaces_abstract
                     break;
                 case 3:
                     SportsBike sportsbikeObj = new SportsBike();
-                    sportsbikeObj.getVehicleDetails();
-                    sportsbikeObj.PrintDetails();
+                    object detailsSportsBike = sportsbikeObj.getVehicleDetails();
+                    sportsbikeObj.Brake();
+                    PrintDetails(detailsSportsBike);
+                    //PrintDetails();
                     break;
                 case 4:
                     RacingCar racingcar = new RacingCar();
-                    object details = racingcar.getVehicleDetails();
+                    object detailSportCar = racingcar.getVehicleDetails();
                     racingcar.Brake();
-                    PrintDetails(details);
+                    PrintDetails(detailSportCar);
                     break;
                 default:
                     Console.WriteLine("Enter proper choice");

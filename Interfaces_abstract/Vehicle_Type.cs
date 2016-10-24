@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Interface;
+using Interfaces_abstract;
 
 namespace Interfaces_abstract
 {
@@ -22,19 +23,15 @@ namespace Interfaces_abstract
         }
 
    
-        public virtual void getVehicleDetails()
+        public virtual object getVehicleDetails()
         {
             Console.WriteLine("\nEnter the color of the vehicle");
             this.Color = Console.ReadLine();
             Console.WriteLine("\nEnter the capacity of the vehicle");
             this.Capacity = Convert.ToInt32(Console.ReadLine());
-            PrintDetails();
-
+            return this;
         }
-        public virtual void PrintDetails()
-        {
-            Console.WriteLine("\nThe details entered are as follows:\nColor of the two wheeler:{0}\nCapacity of the two wheeler:{1}",this.Color,this.Capacity);
-        }
+   
     }
 
     class FourWheeler : IVehicle
@@ -71,11 +68,11 @@ namespace Interfaces_abstract
     {
         public bool airBrakes()
         {
-            Console.WriteLine("Air Brakes Available in Bike: YES/NO");
-            bool returnResult = true;
+            Console.WriteLine("Air Brakes Available in Car: YES/NO");
+            bool returnResult = false;
             String airBrakeAvailable = Console.ReadLine();
             airBrakeAvailable = airBrakeAvailable.ToUpper();
-            while (airBrakeAvailable != "YES" || airBrakeAvailable != "NO")
+            while (airBrakeAvailable != "YES" && airBrakeAvailable != "NO")
             {
                 Console.WriteLine("Please enter the correct Value");
                 airBrakes();
@@ -88,23 +85,27 @@ namespace Interfaces_abstract
             {
                 returnResult = false;
             }
+
             return returnResult;
         }
-        public override void PrintDetails()
+
+
+        public new object getVehicleDetails()
         {
-            Console.WriteLine("\nThe details entered are as follows:\nColor of the sports bike:{0}\nCapacity of the sports bike:{1}\nAir brakes available:{2}", this.Color, this.Capacity);
-        }
-        public override void getVehicleDetails()
-        {
-            Console.WriteLine("******************Enter the details for sports bike**************");
-            base.getVehicleDetails();
+            Console.WriteLine("******************Enter the details for racing car***************");
+            object details = base.getVehicleDetails();
+            return details;
         }
 
         public void Brake()
         {
-            throw new NotImplementedException();
+            if (airBrakes())
+                Console.WriteLine("Air brakes activated");
+            else
+                Console.WriteLine("Air brakes not activated");
         }
     }
+}
 
     class RacingCar : FourWheeler, ISafety
     {
@@ -148,4 +149,3 @@ namespace Interfaces_abstract
         }
     }
 
-}

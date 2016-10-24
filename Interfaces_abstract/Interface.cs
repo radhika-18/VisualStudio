@@ -15,7 +15,6 @@ namespace Interface
 
         int Capacity { get; set; }
 
-       
     }
 
     /// <summary>
