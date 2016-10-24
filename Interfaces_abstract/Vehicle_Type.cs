@@ -111,10 +111,9 @@ namespace Interfaces_abstract
         public bool airBrakes()
         {
             Console.WriteLine("Air Brakes Available in Car: YES/NO");
-            bool returnResult = true;
+            bool returnResult = false;
             String airBrakeAvailable = Console.ReadLine();
             airBrakeAvailable = airBrakeAvailable.ToUpper();
-            Console.WriteLine(airBrakeAvailable);
             while (airBrakeAvailable != "YES" && airBrakeAvailable != "NO")
             {
                 Console.WriteLine("Please enter the correct Value");
@@ -132,25 +131,12 @@ namespace Interfaces_abstract
             return returnResult;
         }
 
-        public  override void PrintDetails()
-        {
-            Console.WriteLine("\nThe details entered are as follows:\nColor of the racing car:{0}\nCapacity of the racing car:{1}", this.Color, this.Capacity);
-        }
-
-       
-
-        public new void getVehicleDetails()
+ 
+        public new object getVehicleDetails()
         {
             Console.WriteLine("******************Enter the details for racing car***************");
             object details = base.getVehicleDetails();
-            //var properties=details.GetType().GetProperties();
-            //foreach (var p in properties)
-            //{
-            //    (p.GetValue(details,null));
-            //}
-
-            Brake();
-
+            return details;
         }
 
         public void Brake()
@@ -159,7 +145,7 @@ namespace Interfaces_abstract
                 Console.WriteLine("Air brakes activated");
             else
                 Console.WriteLine("Air brakes not activated");
-        } 
+        }
     }
 
 }
